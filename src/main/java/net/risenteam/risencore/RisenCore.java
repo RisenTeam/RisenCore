@@ -9,6 +9,6 @@ public class RisenCore extends RisenPlugin {
 
     @Override
     public void onEnabling() {
-        
+
     }
 }
