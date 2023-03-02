@@ -2,4 +2,5 @@ rootProject.name = 'RisenCore'
 include 'V1_8_R1'
 include 'V1_8_R2'
 include 'Version'
+include 'V1_8_R3'
 
