@@ -9,9 +9,13 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/V1_10_R1" />
+            <option value="$PROJECT_DIR$/V1_11_R1" />
             <option value="$PROJECT_DIR$/V1_8_R1" />
             <option value="$PROJECT_DIR$/V1_8_R2" />
             <option value="$PROJECT_DIR$/V1_8_R3" />
+            <option value="$PROJECT_DIR$/V1_9_R1" />
+            <option value="$PROJECT_DIR$/V1_9_R2" />
           </set>
         </option>
       </GradleProjectSettings>
