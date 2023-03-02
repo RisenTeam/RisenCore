@@ -5,11 +5,15 @@ import org.bukkit.ChatColor;
 
 public class Logger {
 
+    private static final String SUCCESS = ChatColor.translateAlternateColorCodes('&', "&a[SUCCESS] &r");
     private static final String INFO = ChatColor.translateAlternateColorCodes('&', "&b[INFO] &r");
     private static final String WARN = ChatColor.translateAlternateColorCodes('&', "&6[WARN] &r");
     private static final String FAIL = ChatColor.translateAlternateColorCodes('&', "&c[FAIL] &r");
     private static final String ERROR = ChatColor.translateAlternateColorCodes('&', "&c[ERROR] &r");
 
+    public static void success(String message){
+        Bukkit.getConsoleSender().sendMessage(SUCCESS + message);
+    }
 
     public static void log(String message){
         Bukkit.getConsoleSender().sendMessage(INFO + message);
