@@ -10,7 +10,7 @@ public class Wrapper1_8_R2 implements RisenWrapper {
 
     @Override
     public void sendTitle(Player player, String title, String subtitle) {
-        PacketPlayOutTitle packetTitle = new PacketPlayOutTitle(PacketPlayOutTitle.EnumTitleAction.TITLE, IChatBaseComponent.ChatSerializer.a("{\"text\":\"" + title + "\"}"));
+        PacketPlayOutTitle packetTitle = new PacketPlayOutTitle(PacketPlayOutTitle.EnumTitleAction.TITLE, IChatBaseComponent.ChatSerializer.a("{\"text \":\"" + title + "\"}"));
         PacketPlayOutTitle packetSubtitle = new PacketPlayOutTitle(PacketPlayOutTitle.EnumTitleAction.SUBTITLE, IChatBaseComponent.ChatSerializer.a("{\"text\":\"" + subtitle + "\"}"));
 
         ((CraftPlayer) player).getHandle().playerConnection.sendPacket(packetTitle);
