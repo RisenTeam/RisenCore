@@ -2,6 +2,7 @@ package net.risenteam.risencore.commands;
 
 import net.risenteam.risencore.utils.Logger;
 import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
 import org.bukkit.command.SimpleCommandMap;
 import org.bukkit.plugin.SimplePluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -25,7 +26,6 @@ public class CommandManager {
             Logger.log("Found commandMap field.");
             commandMap.setAccessible(true);
             commandRegistry = (SimpleCommandMap) commandMap.get(pluginManager);
-            commandMap.setAccessible(false);
             Logger.success("Successfully retrieve command map.");
         }catch (Exception e){
             if (this.plugin.getConfig().getBoolean("error-stack-trace", false)) {
@@ -36,7 +36,7 @@ public class CommandManager {
         }
     }
 
-    public void register(RisenCommand command){
+    public void register(Command command){
         commandRegistry.register("risen", command);
     }
 

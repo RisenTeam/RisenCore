@@ -11,7 +11,7 @@ public class CommandRisen extends RisenCommand {
     private final RisenCore core;
 
     public CommandRisen(RisenCore core) {
-        super("risen", "Parent command of all Risen core's commands", null);
+        super("risen", "Parent command of all Risen core's commands", "/risen <command>");
         this.core = core;
         addParameter(0, new String[]{"version", "Display the current core version"}, new String[]{"update", "Tells if the plugin has any update"});
     }

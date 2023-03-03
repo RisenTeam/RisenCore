@@ -25,7 +25,7 @@ public abstract class RisenCommand extends Command {
     @Override
     public boolean execute(CommandSender sender, String label, String[] args) {
         if(args.length == 0 && !parameters.isEmpty()){
-            sender.sendMessage("    &c&lHelp Menu");
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "             &c&lHelp Menu"));
             for (Parameters parameter : parameters) {
                 if(parameter.getPosition() == 0){
                     for (Map.Entry<String, String> entry : parameter.getValues().entrySet()) {
