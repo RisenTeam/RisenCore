@@ -10,46 +10,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class RisenPlugin extends JavaPlugin {
 
     private final Gson gson = new Gson();
-    private long enablingSystem;
     private RisenWrapper wrapper = find();
 
     public Gson getGson() {
         return gson;
     }
-
-    /**
-     * @deprecated Please use {@link RisenPlugin#onLoading()} which is call in this method
-     */
-    @Override
-    @Deprecated
-    public void onLoad() {
-        enablingSystem = System.currentTimeMillis();
-        this.onLoading();
-    }
-
-    /**
-     * @deprecated Please use {@link RisenPlugin#onEnabling()} which is call in this method
-     */
-    @Override
-    @Deprecated
-    public void onEnable() {
-        this.onEnabling();
-        Logger.log("Successfully enabled in " + (System.currentTimeMillis() - enablingSystem) + "ms");
-    }
-
-    /**
-     * @deprecated Please use {@link RisenPlugin#onDisabling()} which is call in this method
-     */
-    @Override
-    @Deprecated
-    public void onDisable() {
-        this.onDisabling();
-        Logger.log("Plugin has been enable for " + ((System.currentTimeMillis() - enablingSystem) / 1000) + " seconds.");
-    }
-
-    public void onLoading(){}
-    public void onEnabling(){}
-    public void onDisabling(){}
 
     public RisenWrapper getWrapper() {
         return wrapper;
