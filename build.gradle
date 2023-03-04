@@ -31,12 +31,15 @@ dependencies {
 
 
 setLibsDirName("../exports")
-
+compileJava.options.encoding = 'UTF-8'
 shadowJar {
     baseName = 'RisenCore-' + version + '-final'
     version = null
     classifier = null
 
+    dependencies {
+        exclude(dependency('org.spigotmc:spigot:1.19.3-R0.1-SNAPSHOT'))
+    }
     subprojects.each { project ->
         from(project.sourceSets.main.output) {
             includeEmptyDirs = false
