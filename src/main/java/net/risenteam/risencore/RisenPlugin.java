@@ -5,7 +5,11 @@ import fr.minuskube.inv.InventoryManager;
 import net.risenteam.risencore.utils.Logger;
 import net.risenteam.risencore.version.RisenWrapper;
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class RisenPlugin extends JavaPlugin {
 
@@ -51,5 +55,21 @@ public class RisenPlugin extends JavaPlugin {
             Bukkit.getPluginManager().disablePlugin(this);
             throw new IllegalStateException("RisenCore does not support server version " + version);
         }
+    }
+
+    @Override
+    public void saveDefaultConfig() {
+        super.saveDefaultConfig();
+        InputStream resource = this.getResource("config.yml");
+        YamlConfiguration yamlConfiguration = YamlConfiguration.loadConfiguration(new InputStreamReader(resource));
+        Logger.log("Updating config.yml");
+        yamlConfiguration.getKeys(true).forEach(key -> {
+            if (!this.getConfig().contains(key)) {
+                this.getConfig().set(key, yamlConfiguration.get(key));
+            }
+        });
+
+        Logger.success("Successfully updated config.yml");
+        this.reloadConfig();
     }
 }
