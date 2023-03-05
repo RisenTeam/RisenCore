@@ -41,7 +41,7 @@ public class RisenPlugin extends JavaPlugin {
         final String version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3].substring(1);
 
         try{
-            return (RisenWrapper) Class.forName(getClass().getPackage().getName() + ".version.Wrapper" + version).newInstance();
+            return (RisenWrapper) Class.forName("net.risenteam.risencore.version.Wrapper" + version).newInstance();
         }catch (IllegalAccessException | InstantiationException exception) {
             Logger.fail("Failed to instantiate version wrapper for version " + version);
             Logger.error(exception.getMessage());
